@@ -59,8 +59,62 @@
                 </div>
                 <h2>Selamat Datang di AI Chatbot</h2>
                 <p>Silakan ajukan pertanyaan seputar pengembangan web, web service, pemrograman, atau topik lainnya.</p>
+                
+                <div class="suggestion-chips">
+                    <button class="chip" data-prompt="Apa perbedaan antara REST API dan GraphQL?">
+                        <span>💡 Apa perbedaan REST API vs GraphQL?</span>
+                    </button>
+                    <button class="chip" data-prompt="Bagaimana cara kerja Server-Sent Events (SSE) di Express.js?">
+                        <span>⚡ Cara kerja Server-Sent Events (SSE)</span>
+                    </button>
+                    <button class="chip" data-prompt="Buatkan contoh middleware otentikasi sederhana di Express JS">
+                        <span>🛡️ Contoh middleware Express.js</span>
+                    </button>
+                    <button class="chip" data-prompt="Jelaskan status code HTTP yang paling umum digunakan">
+                        <span>📋 Status code HTTP umum</span>
+                    </button>
+                </div>
             </div>
         </main>
+
+        <!-- Floating Scroll to Bottom Button -->
+        <button id="scrollToBottomBtn" class="scroll-bottom-btn" title="Scroll ke bawah" aria-label="Scroll ke bawah">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </button>
+
+        <!-- Chat Input Footer -->
+        <footer class="chat-footer">
+            <form id="chatForm" class="chat-input-form">
+                <div class="input-wrapper">
+                    <textarea 
+                        id="messageInput" 
+                        placeholder="Ketik pesan Anda di sini... (Shift + Enter untuk baris baru)" 
+                        rows="1"
+                        maxlength="4000"
+                        autocomplete="off"
+                        required></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="stopBtn" class="btn-action btn-stop" title="Hentikan generate pesan" style="display: none;">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <rect x="6" y="6" width="12" height="12" rx="2"></rect>
+                        </svg>
+                        <span>Stop</span>
+                    </button>
+                    <button type="submit" id="sendBtn" class="btn-action btn-send" title="Kirim pesan (Enter)" aria-label="Kirim Pesan">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+            <div class="input-hint">
+                <span>Didukung oleh OpenRouter API &amp; Express SSE</span>
+            </div>
+        </footer>
     </div>
 
     <script src="script.js"></script>
